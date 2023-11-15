@@ -5,6 +5,7 @@ import "@/app/globals.scss"
 import Header from "@/app/header/header";
 
 const inter = Inter({ subsets: ['latin'] })
+export const url: string = "http://localhost:4000"
 
 export const metadata: Metadata = {
   title: 'Good Deals List'
