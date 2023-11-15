@@ -7,11 +7,11 @@ export type DealDocument = HydratedDocument<Deal>;
 
 @Schema()
 export class Deal {
-    
-    @IsNotEmpty()
+
+    @Prop({required: true})
     name: string;
 
-    @IsNotEmpty()
+    @Prop({required: true})
     isCompleted: boolean = false;
 
     @Prop({type: mongoose.Schema.Types.ObjectId, ref: "User"})

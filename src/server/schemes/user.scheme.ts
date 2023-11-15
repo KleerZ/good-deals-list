@@ -1,20 +1,23 @@
 ﻿import {Prop, Schema, SchemaFactory} from '@nestjs/mongoose';
 import mongoose, {HydratedDocument} from 'mongoose';
-import {IsNotEmpty, Matches} from "class-validator";
+import {IsEmail, IsNotEmpty, Matches} from "class-validator";
 
 export type UserDocument = HydratedDocument<User>;
 
 @Schema()
 export class User {
-    
-    @IsNotEmpty()
+    @Prop({required: true})
     name: string;
 
-    @IsNotEmpty()
-    @Matches(/^@/)
+    @Prop({required: true})
+    @IsEmail()
+    email: string
+    
+    @Prop({required: true})
+    @Matches(/^@/, { message: 'tag must start with @' })
     tag: string
 
-    @IsNotEmpty()
+    @Prop({required: true})
     password: string;
 
     @Prop({type: mongoose.Schema.Types.ObjectId, ref: "User"})

@@ -1,4 +1,8 @@
-﻿export interface CreateDealDto {
-    readonly name: string;
-    readonly userId: string;
+﻿import {IsNotEmpty} from "class-validator";
+
+export class CreateDealDto {
+  @IsNotEmpty()
+  name: string;
+  
+  userId: string;
 }

@@ -1,4 +1,8 @@
-﻿export interface UpdateDealDto {
-    readonly name: string,
-    readonly isCompleted: boolean
+﻿import {IsNotEmpty} from "class-validator";
+
+export class UpdateDealDto {
+  @IsNotEmpty()
+  name: string
+  
+  isCompleted: boolean
 }
