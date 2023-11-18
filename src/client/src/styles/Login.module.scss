@@ -1,0 +1,6 @@
+﻿@import "globals";
+
+.input-text-margin {
+  @extend .input-text;
+  margin-bottom: 10px;
+}
